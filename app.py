@@ -73,7 +73,12 @@ st.rerun()
 
 def display_result(result, download_key):
     first, second, third = st.columns(3)
-
+first.metric("Original words", result["original_words"])
+    second.metric("Summary words", result["summary_words"])
+    third.metric(
+        "Text reduced",
+        f"{result['reduction_percent']:.2f}%",
+    )
 first.metric("Original words", result["original_words"])
     second.metric("Summary words", result["summary_words"])
     third.metric(
